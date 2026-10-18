@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>《稻草人》阅读计划 · 线稿空心字</title>
+  <style>
+    @font-face {
+      font-family: "LocalCN";
+      src: local("WenQuanYi Micro Hei"),
+           
+           url("./DroidSansFallback.ttf") format("truetype");
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #aaa; }
+    .poster {
+      width: 1240px;
+      height: 1754px;
+      margin: 0 auto;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      font-family: "LocalCN", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
+    }
+    /* 空心字：白心 + 黑描边 */
+    .hollow {
+      color: #fff !important;
+      -webkit-text-stroke: 2.8px #000;
+      paint-order: stroke fill;
+      font-weight: 900;
+    }
+    .hollow-lg {
+      color: #fff !important;
+      -webkit-text-stroke: 4.2px #000;
+      paint-order: stroke fill;
+      font-weight: 900;
+    }
+    .hollow-sm {
+      color: #fff !important;
+      -webkit-text-stroke: 2.2px #000;
+      paint-order: stroke fill;
+      font-weight: 900;
+    }
+    .frame {
+      position: absolute; inset: 24px;
+      border: 3px solid #111; border-radius: 14px;
+      pointer-events: none; z-index: 5;
+    }
+    .frame2 {
+      position: absolute; inset: 38px;
+      border: 2px dashed #111; border-radius: 10px;
+      pointer-events: none; z-index: 5;
+    }
+    .content {
+      position: relative; z-index: 2;
+      height: 100%;
+      padding: 58px 80px 48px;
+      display: flex;
+      flex-direction: column;
+    }
+    .title-wrap { text-align: center; flex: 0 0 auto; }
+    .title-bubble {
+      display: inline-block;
+      border: 3px solid #111;
+      border-radius: 46% 54% 48% 52% / 56% 56% 44% 44%;
+      padding: 8px 36px 10px;
+      background: #fff;
+    }
+    .title-bubble h1 {
+      font-size: 78px;
+      letter-spacing: 0.08em;
+      line-height: 1.05;
+    }
+    .subtitle {
+      margin-top: 10px;
+      font-size: 34px;
+      letter-spacing: 0.35em;
+    }
+    .main {
+      margin-top: 16px;
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: 190px 1fr 210px;
+      gap: 14px;
+      min-height: 0;
+    }
+    .box-card, .note-card {
+      border: 2.5px dashed #111;
+      border-radius: 10px;
+      background: #fff;
+      padding: 10px 8px;
+    }
+    .box-card { height: 100%; min-height: 200px; }
+    .box-card h3, .note-card h3 {
+      text-align: center;
+      font-size: 26px;
+    }
+    .note-card { margin-top: 14px; min-height: 120px; flex: 0 0 auto; }
+    table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      table-layout: fixed;
+    }
+    th, td {
+      border: 2px solid #111;
+      text-align: center;
+      vertical-align: middle;
+      background: #fff;
+    }
+    th {
+      height: 44px;
+      font-size: 20px;
+    }
+    td.num { width: 10%; font-size: 22px; }
+    td.date { width: 22%; }
+    td.titlec { width: 28%; }
+    td.dur { width: 20%; }
+    td.status { width: 20%; }
+    .tick {
+      display: inline-block;
+      width: 22px; height: 22px;
+      border: 2.5px solid #111;
+      background: #fff;
+    }
+    .side-right {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+    .duration {
+      width: 180px; height: 180px;
+      border: 3px solid #111;
+      border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: #fff;
+      gap: 2px;
+    }
+    .duration .lab { font-size: 26px; }
+    .duration .gap {
+      width: 64px; height: 26px;
+      border-bottom: 2.5px solid #111;
+    }
+    .float { position: absolute; z-index: 3; pointer-events: none; }
+    .sun { top: 64px; left: 64px; width: 78px; }
+    .bird { top: 80px; right: 80px; width: 70px; }
+    .flowers { bottom: 64px; left: 64px; width: 120px; }
+    .wheat { bottom: 70px; right: 64px; width: 90px; }
+    .scarecrow { width: 150px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="frame"></div>
+    <div class="frame2"></div>
+
+    <svg class="float sun" viewBox="0 0 90 90" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round">
+      <circle cx="45" cy="45" r="16"/>
+      <line x1="45" y1="8" x2="45" y2="20"/><line x1="45" y1="70" x2="45" y2="82"/>
+      <line x1="8" y1="45" x2="20" y2="45"/><line x1="70" y1="45" x2="82" y2="45"/>
+      <line x1="18" y1="18" x2="26" y2="26"/><line x1="64" y1="64" x2="72" y2="72"/>
+      <line x1="72" y1="18" x2="64" y2="26"/><line x1="26" y1="64" x2="18" y2="72"/>
+      <circle cx="39" cy="42" r="1.8" fill="#111"/><circle cx="51" cy="42" r="1.8" fill="#111"/>
+      <path d="M38 52 Q45 58 52 52"/>
+    </svg>
+    <svg class="float bird" viewBox="0 0 80 40" fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round">
+      <path d="M6 24 Q28 4 40 20 Q52 4 74 24"/>
+      <circle cx="40" cy="22" r="2.5" fill="#111"/>
+    </svg>
+    <svg class="float flowers" viewBox="0 0 140 90" fill="none" stroke="#111" stroke-width="2.2">
+      <circle cx="30" cy="40" r="12"/><circle cx="30" cy="28" r="9"/><circle cx="18" cy="40" r="9"/><circle cx="42" cy="40" r="9"/><circle cx="30" cy="40" r="4"/>
+      <circle cx="70" cy="55" r="11"/><circle cx="70" cy="44" r="8"/><circle cx="59" cy="55" r="8"/><circle cx="81" cy="55" r="8"/><circle cx="70" cy="55" r="3.5"/>
+      <circle cx="105" cy="35" r="12"/><circle cx="105" cy="23" r="9"/><circle cx="93" cy="35" r="9"/><circle cx="117" cy="35" r="9"/><circle cx="105" cy="35" r="4"/>
+    </svg>
+    <svg class="float wheat" viewBox="0 0 100 120" fill="none" stroke="#111" stroke-width="2.4">
+      <line x1="30" y1="118" x2="30" y2="42"/>
+      <ellipse cx="30" cy="30" rx="7" ry="14"/>
+      <ellipse cx="18" cy="48" rx="6" ry="12" transform="rotate(-28 18 48)"/>
+      <ellipse cx="42" cy="48" rx="6" ry="12" transform="rotate(28 42 48)"/>
+      <line x1="70" y1="118" x2="70" y2="52"/>
+      <ellipse cx="70" cy="40" rx="6" ry="12"/>
+    </svg>
+
+    <div class="content">
+      <div class="title-wrap">
+        <div class="title-bubble">
+          <h1 class="hollow-lg">《稻草人》</h1>
+        </div>
+        <div class="subtitle hollow">阅读计划</div>
+      </div>
+
+      <div class="main">
+        <aside class="box-card">
+          <h3 class="hollow">打卡妙招</h3>
+        </aside>
+
+        <main>
+          <table>
+            <thead>
+              <tr>
+                <th class="hollow-sm">序号</th>
+                <th class="hollow-sm">阅读日期</th>
+                <th class="hollow-sm">阅读篇目</th>
+                <th class="hollow-sm">阅读时长</th>
+                <th class="hollow-sm">完成情况</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="num hollow-sm">1</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">2</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">3</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">4</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">5</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">6</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">7</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">8</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">9</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">10</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+              <tr><td class="num hollow-sm">11</td><td class="date"></td><td class="titlec"></td><td class="dur"></td><td class="status"><span class="tick"></span></td></tr>
+            </tbody>
+          </table>
+        </main>
+
+        <aside class="side-right">
+          <svg class="scarecrow" viewBox="0 0 160 200" fill="none" stroke="#111" stroke-width="2.6" stroke-linejoin="round">
+            <line x1="80" y1="70" x2="80" y2="185"/>
+            <line x1="35" y1="95" x2="125" y2="95"/>
+            <circle cx="80" cy="55" r="26"/>
+            <ellipse cx="80" cy="34" rx="32" ry="9"/>
+            <rect x="62" y="16" width="36" height="22" rx="5"/>
+            <circle cx="70" cy="52" r="2.2" fill="#111"/><circle cx="90" cy="52" r="2.2" fill="#111"/>
+            <path d="M68 64 Q80 73 92 64"/>
+            <path d="M48 95 Q80 132 112 95 L118 152 Q80 170 42 152 Z"/>
+            <line x1="56" y1="42" x2="42" y2="56"/><line x1="104" y1="42" x2="118" y2="56"/>
+            <path d="M30 185 Q80 168 130 185"/>
+          </svg>
+          <div class="duration">
+            <div class="lab hollow">总时长约</div>
+            <div class="gap"></div>
+            <div class="lab hollow">小时</div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="note-card">
+        <h3 class="hollow">阅读小贴士</h3>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
