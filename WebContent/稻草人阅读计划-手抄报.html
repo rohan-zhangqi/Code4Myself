@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>《稻草人》阅读计划 · 手抄报</title>
+  <title>《稻草人》阅读计划</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&family=ZCOOL+QingKe+HuangYou&family=Noto+Sans+SC:wght@500;700&display=swap" rel="stylesheet" />
@@ -237,6 +237,23 @@
       width: 24%;
     }
 
+    tbody td {
+      height: 48px;
+    }
+
+    td.fill-line {
+      position: relative;
+    }
+
+    td.fill-line::after {
+      content: "";
+      display: block;
+      width: 86%;
+      height: 0;
+      margin: 0 auto;
+      border-bottom: 1.5px dotted #c4b89a;
+    }
+
     .tick-box {
       display: inline-block;
       width: 22px;
@@ -249,11 +266,22 @@
       box-shadow: 2px 2px 0 #f4c84a;
     }
 
-    .status-text {
-      font-family: "ZCOOL KuaiLe", cursive;
-      font-size: 15px;
-      color: #e85d4c;
-      margin-left: 4px;
+    .blank-area {
+      min-height: 72px;
+      margin-top: 4px;
+    }
+
+    .blank-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 8px 6px 4px;
+    }
+
+    .blank-lines i {
+      display: block;
+      height: 0;
+      border-bottom: 1.5px dotted #b8a88a;
     }
 
     /* Side column decorations */
@@ -480,7 +508,7 @@
         <div class="title-banner">
           <h1>《稻草人》</h1>
         </div>
-        <p class="subtitle">阅 读 计 划 手 抄 报</p>
+        <p class="subtitle">阅 读 计 划</p>
         <div class="meta-row">
           <span class="chip">作者：叶圣陶</span>
           <span class="chip">11 篇童话</span>
@@ -505,80 +533,80 @@
             <tbody>
               <tr>
                 <td class="num">01</td>
-                <td class="date">10月20日 周一</td>
-                <td class="title">稻草人</td>
-                <td class="duration">约 35 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">02</td>
-                <td class="date">10月21日 周二</td>
-                <td class="title">小白船</td>
-                <td class="duration">约 25 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">03</td>
-                <td class="date">10月22日 周三</td>
-                <td class="title">一粒种子</td>
-                <td class="duration">约 20 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">04</td>
-                <td class="date">10月23日 周四</td>
-                <td class="title">芳儿的梦</td>
-                <td class="duration">约 20 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">05</td>
-                <td class="date">10月24日 周五</td>
-                <td class="title">新的表</td>
-                <td class="duration">约 25 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">06</td>
-                <td class="date">10月25日 周六</td>
-                <td class="title">鲤鱼的遇险</td>
-                <td class="duration">约 30 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">07</td>
-                <td class="date">10月26日 周日</td>
-                <td class="title">眼泪</td>
-                <td class="duration">约 30 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">08</td>
-                <td class="date">10月27日 周一</td>
-                <td class="title">画眉</td>
-                <td class="duration">约 25 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">09</td>
-                <td class="date">10月28日 周二</td>
-                <td class="title">花园外</td>
-                <td class="duration">约 25 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">10</td>
-                <td class="date">10月29日 周三</td>
-                <td class="title">祥哥的胡琴</td>
-                <td class="duration">约 25 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
               <tr>
                 <td class="num">11</td>
-                <td class="date">10月30日 周四</td>
-                <td class="title">快乐的人</td>
-                <td class="duration">约 30 分钟</td>
-                <td class="status"><span class="tick-box"></span><span class="status-text">待完成</span></td>
+                <td class="date fill-line"></td>
+                <td class="title fill-line"></td>
+                <td class="duration fill-line"></td>
+                <td class="status"><span class="tick-box"></span></td>
               </tr>
             </tbody>
           </table>
@@ -613,26 +641,25 @@
 
           <div class="doodle-card green">
             <h3>打卡妙招</h3>
-            <p>读完画 ✓<br/>喜欢的句子<br/>可以抄一抄<br/>再画个插图</p>
+            <div class="blank-area blank-lines" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </div>
           </div>
 
           <div class="doodle-card blue">
             <h3>总时长</h3>
-            <p style="font-family:'ZCOOL KuaiLe',cursive;font-size:28px;color:#1e88a8;">约 4.5 小时</p>
-            <p>每天一点点<br/>收获一整片田野</p>
+            <div class="blank-area blank-lines" aria-hidden="true">
+              <i></i><i></i>
+            </div>
           </div>
         </aside>
       </div>
 
-      <div class="footer">
+      <div class="footer" style="grid-template-columns: 1fr;">
         <div class="tip-box">
-          选安静时间细读；遇到不懂的词先猜一猜再查一查。
-          读完《稻草人》后，想想：如果你是稻草人，那一夜你会怎么做？
-        </div>
-        <div class="sign-box">
-          小读者：____________<br/>
-          老师 / 家长：________<br/>
-          完成日期：____月____日
+          <div class="blank-area blank-lines" aria-hidden="true" style="min-height: 56px;">
+            <i></i><i></i><i></i>
+          </div>
         </div>
       </div>
 
