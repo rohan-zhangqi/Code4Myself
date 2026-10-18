@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>《稻草人》阅读计划</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #c9b89a; }
+    .poster {
+      width: 1240px; height: 1754px; margin: 0 auto; position: relative;
+      background:
+        radial-gradient(circle at 15% 12%, #fff7c8 0%, transparent 35%),
+        radial-gradient(circle at 85% 18%, #e8f4ff 0%, transparent 30%),
+        #fff8dc;
+      overflow: hidden;
+      font-family: "Noto Sans SC", sans-serif;
+      color: #2b2418;
+    }
+    .border-outer {
+      position: absolute; inset: 22px;
+      border: 7px dashed #e85d4c;
+      border-radius: 28px;
+      pointer-events: none; z-index: 5;
+    }
+    .border-inner {
+      position: absolute; inset: 38px;
+      border: 3px dashed #3aa87a;
+      border-radius: 22px;
+      pointer-events: none; z-index: 5;
+    }
+    .content { position: relative; z-index: 2; height: 100%; padding: 70px 90px 60px; }
+    .title {
+      text-align: center; margin-bottom: 8px;
+    }
+    .title h1 {
+      display: inline-block;
+      font-family: "Ma Shan Zheng", cursive;
+      font-size: 86px; color: #e23b2e; letter-spacing: 0.08em;
+      padding: 8px 40px 12px;
+      border: 5px solid #e23b2e;
+      border-radius: 48% 52% 50% 50% / 60% 60% 40% 40%;
+      background: #fffdf5;
+      line-height: 1.1;
+    }
+    .subtitle {
+      margin-top: 14px;
+      font-family: "ZCOOL KuaiLe", cursive;
+      font-size: 34px; color: #2f9b57; letter-spacing: 0.35em;
+    }
+    .subtitle::before, .subtitle::after {
+      content: "═══";
+      color: #f0a030; margin: 0 10px; letter-spacing: 0;
+    }
+    .layout {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 210px 1fr 230px;
+      gap: 18px;
+      align-items: start;
+    }
+    .tips-card, .duration-card, .note-card {
+      border: 3px dashed #3aa87a;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.55);
+      padding: 14px 12px 18px;
+      min-height: 220px;
+    }
+    .tips-card h3, .note-card h3, .duration-card h3 {
+      font-family: "ZCOOL KuaiLe", cursive;
+      font-size: 26px; text-align: center; margin-bottom: 10px;
+    }
+    .tips-card h3 { color: #2f9b57; }
+    .note-card { border-color: #4a90c8; min-height: 160px; }
+    .note-card h3 { color: #2f78b0; }
+    .duration-card {
+      border: 4px solid #4a90c8;
+      border-radius: 50%;
+      width: 200px; height: 200px;
+      margin: 20px auto 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #eef7ff;
+      box-shadow: 0 0 0 6px rgba(74,144,200,0.12);
+    }
+    .duration-card h3 { color: #2f78b0; font-size: 28px; margin: 0; }
+    .duration-card .blank {
+      width: 70px; height: 36px; border-bottom: 3px solid #2f78b0; margin: 8px 0 4px;
+    }
+    .duration-card .unit { font-family: "ZCOOL KuaiLe", cursive; font-size: 26px; color: #2f78b0; }
+    table {
+      width: 100%; border-collapse: collapse;
+      background: rgba(255,255,255,0.7);
+      border: 3px solid #5ba3d0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th {
+      background: #bfe3f7; color: #1e4f70;
+      font-family: "ZCOOL KuaiLe", cursive;
+      font-size: 22px; padding: 12px 6px;
+      border: 2px solid #5ba3d0;
+    }
+    td {
+      height: 58px; border: 2px solid #5ba3d0;
+      text-align: center; vertical-align: middle;
+      background: #fffdf8;
+    }
+    td.num {
+      width: 10%;
+      font-family: "ZCOOL KuaiLe", cursive;
+      font-size: 22px; color: #333;
+    }
+    td.date { width: 22%; }
+    td.title { width: 28%; }
+    td.duration { width: 20%; }
+    td.status { width: 20%; }
+    .box {
+      display: inline-block; width: 26px; height: 26px;
+      border: 3px solid #e23b2e; border-radius: 3px; background: #fff;
+    }
+    .scarecrow { width: 180px; margin: 0 auto; display: block; }
+    .side-right { text-align: center; padding-top: 10px; }
+    .footer {
+      margin-top: 24px;
+    }
+    .float { position: absolute; z-index: 3; pointer-events: none; }
+    .sun { top: 70px; left: 70px; width: 90px; }
+    .bird { top: 90px; right: 90px; width: 80px; }
+    .flowers { bottom: 70px; left: 70px; width: 140px; }
+    .wheat { bottom: 80px; right: 70px; width: 100px; }
+    .star1 { top: 210px; left: 100px; width: 28px; }
+    .star2 { top: 240px; right: 120px; width: 24px; }
+  </style>
+</head>
+<body>
+  <div class="poster">
+    <div class="border-outer"></div>
+    <div class="border-inner"></div>
+
+    <svg class="float sun" viewBox="0 0 90 90"><circle cx="45" cy="45" r="18" fill="#f6d23a" stroke="#e09a20" stroke-width="3"/><g stroke="#e09a20" stroke-width="4" stroke-linecap="round"><line x1="45" y1="6" x2="45" y2="18"/><line x1="45" y1="72" x2="45" y2="84"/><line x1="6" y1="45" x2="18" y2="45"/><line x1="72" y1="45" x2="84" y2="45"/><line x1="16" y1="16" x2="24" y2="24"/><line x1="66" y1="66" x2="74" y2="74"/><line x1="74" y1="16" x2="66" y2="24"/><line x1="24" y1="66" x2="16" y2="74"/></g><circle cx="38" cy="42" r="2.5" fill="#333"/><circle cx="52" cy="42" r="2.5" fill="#333"/><path d="M38 52 Q45 58 52 52" fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <svg class="float bird" viewBox="0 0 80 40"><path d="M6 24 Q28 4 40 20 Q52 4 74 24" fill="none" stroke="#4a90c8" stroke-width="4" stroke-linecap="round"/><circle cx="40" cy="22" r="3.5" fill="#e23b2e"/></svg>
+    <svg class="float star1" viewBox="0 0 28 28"><polygon points="14,1 17,10 27,10 19,16 22,26 14,20 6,26 9,16 1,10 11,10" fill="#f6d23a"/></svg>
+    <svg class="float star2" viewBox="0 0 24 24"><polygon points="12,1 14.5,8 22,8 16,12.5 18,20 12,16 6,20 8,12.5 2,8 9.5,8" fill="#f6d23a"/></svg>
+    <svg class="float flowers" viewBox="0 0 140 90">
+      <circle cx="30" cy="40" r="12" fill="#ff6b9d"/><circle cx="30" cy="28" r="10" fill="#ff8fb3"/><circle cx="18" cy="40" r="10" fill="#ff8fb3"/><circle cx="42" cy="40" r="10" fill="#ff8fb3"/><circle cx="30" cy="40" r="6" fill="#f6d23a"/>
+      <circle cx="70" cy="55" r="11" fill="#7c6bff"/><circle cx="70" cy="44" r="9" fill="#9b8cff"/><circle cx="59" cy="55" r="9" fill="#9b8cff"/><circle cx="81" cy="55" r="9" fill="#9b8cff"/><circle cx="70" cy="55" r="5" fill="#f6d23a"/>
+      <circle cx="105" cy="35" r="12" fill="#4aa3ff"/><circle cx="105" cy="23" r="10" fill="#78b9ff"/><circle cx="93" cy="35" r="10" fill="#78b9ff"/><circle cx="117" cy="35" r="10" fill="#78b9ff"/><circle cx="105" cy="35" r="6" fill="#f6d23a"/>
+      <circle cx="50" cy="20" r="10" fill="#f6d23a"/><circle cx="50" cy="11" r="8" fill="#ffe27a"/><circle cx="41" cy="20" r="8" fill="#ffe27a"/><circle cx="59" cy="20" r="8" fill="#ffe27a"/><circle cx="50" cy="20" r="4" fill="#e09a20"/>
+    </svg>
+    <svg class="float wheat" viewBox="0 0 100 120">
+      <line x1="30" y1="120" x2="30" y2="40" stroke="#c48a1a" stroke-width="4"/>
+      <ellipse cx="30" cy="28" rx="8" ry="16" fill="#f0c14a"/>
+      <ellipse cx="18" cy="45" rx="7" ry="14" fill="#e8b84a" transform="rotate(-28 18 45)"/>
+      <ellipse cx="42" cy="45" rx="7" ry="14" fill="#e8b84a" transform="rotate(28 42 45)"/>
+      <line x1="70" y1="120" x2="70" y2="50" stroke="#c48a1a" stroke-width="4"/>
+      <ellipse cx="70" cy="38" rx="7" ry="14" fill="#f0c14a"/>
+      <ellipse cx="58" cy="55" rx="6" ry="12" fill="#e8b84a" transform="rotate(-28 58 55)"/>
+      <ellipse cx="82" cy="55" rx="6" ry="12" fill="#e8b84a" transform="rotate(28 82 55)"/>
+    </svg>
+
+    <div class="content">
+      <div class="title">
+        <h1>《稻草人》</h1>
+        <div class="subtitle">阅读计划</div>
+      </div>
+
+      <div class="layout">
+        <aside>
+          <div class="tips-card">
+            <h3>💡 打卡妙招</h3>
+            <!-- 正文留白 -->
+          </div>
+        </aside>
+
+        <main>
+          <table>
+            <thead>
+              <tr>
+                <th>序号</th>
+                <th>阅读日期</th>
+                <th>阅读篇目</th>
+                <th>阅读时长</th>
+                <th>完成情况</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="num">1</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">2</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">3</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">4</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">5</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">6</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">7</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">8</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">9</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">10</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+              <tr><td class="num">11</td><td class="date"></td><td class="title"></td><td class="duration"></td><td class="status"><span class="box"></span></td></tr>
+            </tbody>
+          </table>
+        </main>
+
+        <aside class="side-right">
+          <svg class="scarecrow" viewBox="0 0 160 200">
+            <line x1="80" y1="70" x2="80" y2="185" stroke="#8b5a2b" stroke-width="7"/>
+            <line x1="35" y1="95" x2="125" y2="95" stroke="#8b5a2b" stroke-width="6"/>
+            <circle cx="80" cy="55" r="28" fill="#f0c14a" stroke="#c48a1a" stroke-width="3"/>
+            <ellipse cx="80" cy="34" rx="34" ry="10" fill="#e23b2e"/>
+            <rect x="60" y="14" width="40" height="24" rx="6" fill="#e23b2e"/>
+            <circle cx="70" cy="52" r="3" fill="#333"/><circle cx="90" cy="52" r="3" fill="#333"/>
+            <path d="M68 64 Q80 74 92 64" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+            <path d="M48 95 Q80 135 112 95 L120 155 Q80 175 40 155 Z" fill="#4a90c8" stroke="#2f6f9a" stroke-width="3"/>
+            <line x1="55" y1="42" x2="40" y2="58" stroke="#e8b84a" stroke-width="3"/>
+            <line x1="105" y1="42" x2="120" y2="58" stroke="#e8b84a" stroke-width="3"/>
+            <path d="M30 185 Q80 165 130 185" fill="none" stroke="#3aa87a" stroke-width="4"/>
+          </svg>
+          <div class="duration-card">
+            <h3>总时长约</h3>
+            <div class="blank"></div>
+            <div class="unit">小时</div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="footer">
+        <div class="note-card">
+          <h3>⭐ 阅读小贴士</h3>
+          <!-- 正文留白，无签名栏 -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
